@@ -1,0 +1,18 @@
+name: PR title
+
+# semantic-release computes versions from commit messages, and pull requests are squash merged
+# with their title as the commit message, so titles must follow Conventional Commits.
+on:
+    pull_request:
+        types: [opened, edited, synchronize, reopened]
+
+permissions:
+    pull-requests: read
+
+jobs:
+    conventional-commit:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: amannn/action-semantic-pull-request@v6
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,7 @@
+node_modules
+dist
+coverage
+.next
+*.tgz
+e2e/.tmp
+*.tsbuildinfo

@@ -1,0 +1,61 @@
+name: CI
+
+on:
+    pull_request:
+    workflow_call:
+
+permissions:
+    contents: read
+
+jobs:
+    check:
+        name: Lint, format and types
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+            - uses: pnpm/setup@v3
+              with:
+                  node-version-file: false
+                  require-lockfile: true
+                  cache: true
+            - run: pnpm run fmt:check
+            - run: pnpm run lint
+            - run: pnpm run typecheck
+
+    test:
+        name: Test (Node.js ${{ matrix.node }})
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node: [22, 24]
+        steps:
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: ${{ matrix.node }}
+            - uses: pnpm/setup@v3
+              with:
+                  node-version-file: false
+                  require-lockfile: true
+                  cache: true
+            - run: pnpm run build
+            - run: pnpm test
+
+    e2e:
+        name: End-to-end (Next.js)
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+            - uses: pnpm/setup@v3
+              with:
+                  node-version-file: false
+                  require-lockfile: true
+                  cache: true
+            - run: pnpm run test:e2e

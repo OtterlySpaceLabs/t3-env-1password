@@ -1,0 +1,24 @@
+{
+	"name": "e2e-next-app",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "next build",
+		"start": "next start",
+		"dev": "next dev"
+	},
+	"dependencies": {
+		"@1password/sdk": "file:../fake-1password-sdk",
+		"@otterlyspace/t3-env-1password": "file:../package.tgz",
+		"@t3-oss/env-nextjs": "0.13.11",
+		"next": "16.4.3",
+		"react": "19.3.1",
+		"react-dom": "19.3.1",
+		"zod": "4.6.7"
+	},
+	"devDependencies": {
+		"@types/node": "24.19.2",
+		"@types/react": "19.3.0",
+		"typescript": "5.9.3"
+	}
+}

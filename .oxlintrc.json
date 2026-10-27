@@ -1,0 +1,23 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "import", "unicorn", "vitest", "node"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"env": {
+		"builtin": true,
+		"node": true
+	},
+	"ignorePatterns": ["dist", "coverage", "e2e/.tmp", "e2e/next-app/.next"],
+	"rules": {
+		"typescript/consistent-type-imports": [
+			"error",
+			{ "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+		],
+		"import/no-cycle": "error",
+		"typescript/no-floating-promises": "error",
+		"typescript/require-await": "warn",
+		"typescript/no-explicit-any": "error"
+	}
+}

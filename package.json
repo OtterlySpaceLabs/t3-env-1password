@@ -1,0 +1,92 @@
+{
+	"name": "@otterlyspace/t3-env-1password",
+	"version": "0.0.0-development",
+	"description": "Load 1Password Environments and op:// secret references into t3-env, at build time and at runtime.",
+	"keywords": [
+		"1password",
+		"environment variables",
+		"nextjs",
+		"secrets",
+		"t3-env"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OtterlySpace/t3-env-1password.git"
+	},
+	"bin": {
+		"t3-env-1password": "./dist/cli.js"
+	},
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./register": {
+			"types": "./dist/register.d.ts",
+			"default": "./dist/register.js"
+		},
+		"./next": {
+			"types": "./dist/next.d.ts",
+			"default": "./dist/next.js"
+		},
+		"./phase": {
+			"types": "./dist/phase.d.ts",
+			"default": "./dist/phase.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"scripts": {
+		"build": "tsdown",
+		"typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.build.json",
+		"lint": "oxlint --type-aware --deny-warnings",
+		"lint:fix": "oxlint --type-aware --fix && oxfmt",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:e2e": "vitest run --config vitest.e2e.config.ts"
+	},
+	"devDependencies": {
+		"@1password/sdk": "0.5.0",
+		"@semantic-release/changelog": "^7.0.0",
+		"@semantic-release/git": "^11.0.1",
+		"@semantic-release/github": "^12.0.10",
+		"@semantic-release/npm": "^13.2.0",
+		"@t3-oss/env-core": "0.13.11",
+		"@t3-oss/env-nextjs": "0.13.11",
+		"@types/node": "^24.19.2",
+		"conventional-changelog-conventionalcommits": "^10.4.1",
+		"next": "16.4.3",
+		"oxfmt": "^0.74.0",
+		"oxlint": "^1.89.0",
+		"oxlint-tsgolint": "^7.0.2005",
+		"publint": "^0.3.25",
+		"semantic-release": "^25.0.9",
+		"tsdown": "^0.23.2",
+		"typescript": "7.0.2",
+		"vitest": "^5.0.5",
+		"zod": "^4.6.7"
+	},
+	"peerDependencies": {
+		"@1password/sdk": ">=0.4.1 <1.0.0",
+		"next": ">=15.0.0"
+	},
+	"peerDependenciesMeta": {
+		"next": {
+			"optional": true
+		}
+	},
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"packageManager": "pnpm@12.15.0"
+}
