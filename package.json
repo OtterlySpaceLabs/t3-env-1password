@@ -15,7 +15,7 @@
 		"url": "git+https://github.com/OtterlySpaceLabs/t3-env-1password.git"
 	},
 	"bin": {
-		"t3-env-1password": "./dist/cli.js"
+		"t3-env-1password": "dist/cli.js"
 	},
 	"files": [
 		"dist"
