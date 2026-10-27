@@ -7,6 +7,16 @@ Load variables from [1Password Environments](https://www.1password.dev/environme
 - **Passthrough**: existing variables are kept, and any `op://vault/item/field` value is replaced with its secret.
 - **Next.js support** for `next dev`, `next build`, `next start`, standalone output and serverless platforms. Secrets are loaded when the server starts, and only public variables are inlined into the client bundle.
 
+> [!WARNING]
+> **Early release, not certified for production use.**
+>
+> - This package is new and its API may change in any release. It has not been independently audited, and it has not yet been tested against every 1Password account setup or hosting platform.
+> - It handles secrets. Review the code and test it in your own environment, including your build output, before relying on it. You are responsible for how it is used in your projects.
+> - It is provided "as is", without warranty of any kind, under the [MIT License](./LICENSE). The authors and OtterlySpace are not liable for any claim, damage or loss arising from its use, including leaked secrets, outages or data loss.
+> - It is a community project, not affiliated with or endorsed by 1Password (AgileBits Inc.) or T3 OSS. 1Password is a trademark of AgileBits Inc.
+>
+> Please report security issues privately through [GitHub security advisories](https://github.com/OtterlySpace/t3-env-1password/security/advisories/new), not in public issues.
+
 ```bash
 pnpm add @otterlyspace/t3-env-1password @1password/sdk
 ```
