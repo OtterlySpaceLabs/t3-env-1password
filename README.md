@@ -15,7 +15,7 @@ Load variables from [1Password Environments](https://www.1password.dev/environme
 > - It is provided "as is", without warranty of any kind, under the [MIT License](./LICENSE). The authors and OtterlySpace are not liable for any claim, damage or loss arising from its use, including leaked secrets, outages or data loss.
 > - It is a community project, not affiliated with or endorsed by 1Password (AgileBits Inc.) or T3 OSS. 1Password is a trademark of AgileBits Inc.
 >
-> Please report security issues privately through [GitHub security advisories](https://github.com/OtterlySpace/t3-env-1password/security/advisories/new), not in public issues.
+> Please report security issues privately through [GitHub security advisories](https://github.com/OtterlySpaceLabs/t3-env-1password/security/advisories/new), not in public issues.
 
 ```bash
 pnpm add @otterlyspace/t3-env-1password @1password/sdk
