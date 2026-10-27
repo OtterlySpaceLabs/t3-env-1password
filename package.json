@@ -1,6 +1,6 @@
 {
 	"name": "@otterlyspace/t3-env-1password",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Load 1Password Environments and op:// secret references into t3-env, at build time and at runtime.",
 	"keywords": [
 		"1password",
